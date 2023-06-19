@@ -11,7 +11,7 @@ const publicKey ="35576825b842256ec7f677422e9e79e8";
 const hash = CryptoJS.MD5(ts+privateKey+publicKey);
 
 var displayList = document.getElementById('displayCharacters'); 
-const apiUrl = 'http://gateway.marvel.com/v1/public/characters?limit=40&offset=50';
+const apiUrl = 'https://gateway.marvel.com/v1/public/characters?limit=40&offset=50';
 
 var favs = document.querySelectorAll('.fav_icon');
 var favu ;
