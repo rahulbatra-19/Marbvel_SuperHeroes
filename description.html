@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=x, initial-scale=1.0">
+    <title>Marvel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <style>
+        body{
+            background-color: red !important;
+            /* background-image: none; */
+        }
+        #DesImg{
+            width: 30%;
+            max-height:70vh ;
+    border: 15px solid rgba(0, 0, 0, 0.7) ;
+}
+#desc{
+    width: 55%;
+    color: whitesmoke;
+    padding-left: 4%;
+    font-size: 2rem;
+    /* margin: 0; */
+    /* margin-left: 7%; */
+    background-color: rgba(230, 48, 48, 0.7);
+
+}
+.main{
+    /* margin-left: 3%; */
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+
+    /* position: absolute; */
+}
+    </style>
+</head>
+
+<body style="background-color: aliceblue;">
+    <div class="header">
+    <div class="title">
+        <img src="images/pngwing.com.png" alt="MARVEL" id="marvel-logo">
+    </div>
+    <div class="links">
+        <a  href="index.html" id="home">Home</a>
+        <a href="favourites.html">Favourites</a>
+    </div>
+    </div>
+   <div class="main">
+    <img src="" alt="Not Available" id="DesImg">
+    <div id="desc">
+    <p id="name"></p>
+    <p id="cont"></p>
+    <p id="comics"></p>
+    </div>
+   </div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
