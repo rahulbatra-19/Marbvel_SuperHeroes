@@ -1,4 +1,4 @@
-# Marbvel_SuperHeroes Web Application
+# Marvel_SuperHeroes Web Application
 
 This is a web application called Superhero Hunter that allows users to search for superheroes, view their details, and add them to their favorites list. The application utilizes the Marvel API to fetch data about superheroes and provides an intuitive interface for users to interact with the superheroes.
 
