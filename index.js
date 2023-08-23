@@ -23,52 +23,51 @@ favourite = favu;
 console.log(favourite);
 var dataCharacters = [];
 
-// fetching data from api and displaying some heroes on the screen
-fetch(`${apiUrl}&ts=${ts}&apikey=${publicKey}&hash=${hash}`)
-  .then(response => response.json())
-  .then(data => {  
+  const fetchApi = async () => {
+    try {
+      const { data } = await axios.get(
+        `${apiUrl}&ts=${ts}&apikey=${publicKey}&hash=${hash}`
+      );
+      // const data = await response.json();
+      console.log("data", data);
+      dataCharacters = data.data.results;
+      localStorage.setItem("data", JSON.stringify(dataCharacters));
+      var displayScreenCharcters = dataCharacters.slice(1, 20);
 
-
-      dataCharacters =data.data.results;
-      localStorage.setItem('data',JSON.stringify(dataCharacters));
-      var displayScreenCharcters = dataCharacters.slice(6,20);
-    
-
-      displayScreenCharcters.forEach(character=>{
+      displayScreenCharcters.forEach((character) => {
         let color;
 
-        if(favourite.includes(character.id.toString()))
-        {
-          color ="red";
-        }
-      else
-      color="";
-      let li = document.createElement('li');
-      li.innerHTML = 
-      ` <img src="${character.thumbnail.path +'.'+ character.thumbnail.extension}" alt="No pic Available" id="charpic">
-      
+        if (favourite.includes(character.id.toString())) {
+          color = "red";
+        } else color = "";
+        let li = document.createElement("li");
+        li.innerHTML = ` <img src="${
+          character.thumbnail.path + "." + character.thumbnail.extension
+        }" alt="No pic Available" id="charpic">
+
       <p id="dispname">
       ${character.name}
       </p>
 
-      <span class="material-symbols-outlined fav_icon ${color}" id=${character.id}>
+      <span class="material-symbols-outlined fav_icon ${color}" id=${
+          character.id
+        }>
         favorite
       </span>`;
-      li.addEventListener('click',function()
-      {
-        localStorage.setItem('description',JSON.stringify(character));
-        window.location.assign('description.html');
-      })
+        li.addEventListener("click", function () {
+          localStorage.setItem("description", JSON.stringify(character));
+          window.location.assign("description.html");
+        });
 
-      displayList.appendChild(li);
+        displayList.appendChild(li);
+      });
+    } catch (error) {
+      // Handle any errors
+      console.error(error);
+    }
+  };
 
-     });
-
-  })
-  .catch(error => {
-    // Handle any errors
-    console.error(error);
-  });
+  fetchApi();
 
 
   // console.log(dataCharacters);
